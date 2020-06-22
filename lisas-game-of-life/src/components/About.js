@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 
 export default function About(props) {
   return (
-    <div className="AboutContainer">
+    <div className="Container">
+      <div className="Header">
+        <h1>About the Game</h1>
+      </div>
       <div className="About">
-        <h3>About the Game</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
