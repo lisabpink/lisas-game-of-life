@@ -17,6 +17,12 @@
     "react-scripts": "3.4.1",
     "reactstrap": "^8.4.1"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
   "scripts": {
     "precommit": "lint-staged",
     "start": "react-scripts start",
