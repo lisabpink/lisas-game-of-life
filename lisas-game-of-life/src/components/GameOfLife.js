@@ -73,12 +73,12 @@ export default class GameOfLife extends Component {
             this.cellsize
           );
         } else {
-          ctx.fillStyle = "black";
+          ctx.fillStyle = "pink";
           ctx.fillRect(
             j * this.cellsize,
             k * this.cellsize,
-            this.cellsize,
-            this.cellsize
+            this.cellsize - 1,
+            this.cellsize - 1
           );
         }
       }
@@ -193,10 +193,10 @@ export default class GameOfLife extends Component {
           <h1>Conways Game of Life</h1>
         </div>
         <div className Game>
-          <Button variant="light" onClick={this.start}>
+          <Button variant="light" size="sm" onClick={this.start}>
             Start
           </Button>
-          <Button variant="light" onClick={this.stop}>
+          <Button variant="light" size="sm" onClick={this.stop}>
             Stop
           </Button>
           <p>Generations: {this.state.generation}</p>
