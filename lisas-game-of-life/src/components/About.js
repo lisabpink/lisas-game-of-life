@@ -1,26 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card, CardGroup, Button } from "react-bootstrap";
-import { FaHome, FaInfinity, FaGamepad } from "react-icons/fa";
+import { FaHome, FaInfinity, FaInfoCircle, FaGamepad } from "react-icons/fa";
 
 export default function About(props) {
   return (
     <div className="Container">
       <div className="Header">
-        <h1>About the Game</h1>
+        <h1>
+          <FaInfoCircle />
+          About
+        </h1>
       </div>
       <div className="About">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          The Game of Life is a cellular automaton that requires no input once
+          the game has begun and outcome depends wholly on the starting state.
         </p>
         <p>
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officia deserunt mollit anim id est laborum.
+          Cellular automata simulate living beings/organisms and reproduction.
+          They are also, by nature,{" "}
+          <a href="https://en.wikipedia.org/wiki/Turing_completeness">
+            Turing complete
+          </a>
+          . John Conway published his initial game in the October 1970 issue of
+          Scientific American. when Conway was first figuring the later
+          development of certain configurations, he did so completely by hand.
         </p>
         <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur.
+          Cellular automata can be used to create musical and visual
+          compositions, to generate random numbers and sequences, and to study
+          the development of life itself.
         </p>
       </div>
       <footer>

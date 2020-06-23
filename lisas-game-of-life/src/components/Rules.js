@@ -1,27 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card, CardGroup, Button } from "react-bootstrap";
-import { FaHome, FaInfinity, FaGamepad } from "react-icons/fa";
+import { FaHome, FaInfinity, FaInfoCircle, FaGamepad } from "react-icons/fa";
 
 export default function Rules(props) {
   return (
     <div className="Container">
       <div className="Header">
-        <h1>Rules for the Game of Life</h1>
+        <h1>
+          <FaInfinity />
+          Rules
+        </h1>
       </div>
       <div className="Rules">
+        <br />
+        <h4>
+          In the Game of Life, these rules examine each cell of the grid. For
+          each cell, it counts that cell's eight neighbors (up, down, left,
+          right, and diagonals), and then act on that result.
+        </h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <p>
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officia deserunt mollit anim id est laborum.
+          These rules, which compare the behavior of the automaton to real life,
+          can be condensed into the following:
         </p>
         <ul>
-          <li>Rule One</li>
-          <li>Rule One</li>
-          <li>Rule Three</li>
+          <li>Any live cell with two or three live neighbours survives.</li>
+          <li>Any dead cell with three live neighbours becomes a live cell.</li>
+          <li>
+            All other live cells die in the next generation. Similarly, all
+            other dead cells stay dead.
+          </li>
         </ul>
       </div>
       <footer>
@@ -46,7 +54,7 @@ export default function Rules(props) {
           <Card className="text-center" style={{ margin: "4rem" }}>
             <Card.Body>
               <Card.Title>
-                <FaInfinity />
+                <FaInfoCircle />
               </Card.Title>
 
               <Card.Text>

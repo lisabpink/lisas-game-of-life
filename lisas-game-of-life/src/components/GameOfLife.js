@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardGroup, Button } from "react-bootstrap";
-import { FaHome, FaInfinity, FaGamepad } from "react-icons/fa";
+import { FaHome, FaInfoCircle, FaInfinity, FaGamepad } from "react-icons/fa";
 
 export default class GameOfLife extends Component {
   render() {
@@ -53,7 +53,7 @@ export default class GameOfLife extends Component {
             <Card className="text-center" style={{ margin: "4rem" }}>
               <Card.Body>
                 <Card.Title>
-                  <FaGamepad />
+                  <FaInfoCircle />
                 </Card.Title>
                 <Card.Text>
                   Learn all about the history of the really cool super awesome

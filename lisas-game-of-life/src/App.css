@@ -9,13 +9,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(97, 142, 141, 0.4);
+}
+
+.WelcomeHeader {
+  background-color: rgba(97, 142, 141, 0.4);
+  display: flex;
+  justify-content: center;
+  height: 350px;
+  width: 100%;
+  margin-top: 0 auto;
+  padding-top: 50px;
 }
 
 .Header {
   background-color: rgba(97, 142, 141, 0.4);
   display: flex;
   justify-content: center;
-  height: 350px;
+  height: 200px;
   width: 100%;
   margin-top: 0 auto;
   padding-top: 50px;
@@ -42,4 +53,13 @@ svg {
 
 .Container footer {
   background-color: rgba(97, 142, 141, 0.4);
+}
+
+.About {
+  width: 60%;
+  margin: 30px;
+}
+.Rules {
+  width: 60%;
+  padding: 20px;
 }

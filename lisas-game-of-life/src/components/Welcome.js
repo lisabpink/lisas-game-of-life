@@ -7,7 +7,7 @@ import { FaInfoCircle, FaInfinity, FaGamepad, FaHeart } from "react-icons/fa";
 export default function Welcome(props) {
   return (
     <div className="Container">
-      <div className="Header">
+      <div className="WelcomeHeader">
         <h1>
           I <FaHeart /> Life
         </h1>
