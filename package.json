@@ -28,10 +28,10 @@
     "node": "13.8.0"
   },
   "scripts": {
-    "precommit": "lint-staged",
-    "start": "node index.js",
-    "build": "ng build",
-    "heroku-postbuild": "ng build --prod",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
