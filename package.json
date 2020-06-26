@@ -24,6 +24,9 @@
       "git add"
     ]
   },
+  "engines": {
+    "node": "13.8.0"
+  },
   "scripts": {
     "precommit": "lint-staged",
     "start": "node index.js",
