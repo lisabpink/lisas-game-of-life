@@ -4,8 +4,7 @@ import { Card, CardGroup, Button } from "react-bootstrap";
 import { FaHome, FaInfoCircle, FaInfinity } from "react-icons/fa";
 
 class Cell {
-  constructor(clickable, living, xcoord, ycoord) {
-    this.clickable = clickable;
+  constructor(living, xcoord, ycoord) {
     this.living = living;
     this.x = xcoord;
     this.y = ycoord;
@@ -27,7 +26,7 @@ for (let i = 0; i < rows; i++) {
 }
 for (let j = 0; j < rows; j++) {
   for (let k = 0; k < cols; k++) {
-    arr[j][k] = new Cell(true, 0, 10 * j, 10 * k);
+    arr[j][k] = new Cell(0, 10 * j, 10 * k);
   }
 }
 export default class GameOfLife extends Component {
@@ -42,6 +41,125 @@ export default class GameOfLife extends Component {
       generation: 0
     };
   }
+
+  sample1 = () => {
+    const rows = this.height / this.cellsize;
+    const cols = this.width / this.cellsize;
+    const midX = Math.floor(rows / 2);
+    const midY = Math.floor(cols / 2);
+    this.clearGrid();
+    const mirrorCells = this.state.cells;
+    mirrorCells[midX][midY].toggle();
+    mirrorCells[midX + 1][midY].toggle();
+    mirrorCells[midX][midY + 1].toggle();
+    mirrorCells[midX + 1][midY + 1].toggle();
+    mirrorCells[midX + 2][midY + 2].toggle();
+    mirrorCells[midX + 3][midY + 2].toggle();
+    mirrorCells[midX + 2][midY + 3].toggle();
+    mirrorCells[midX + 3][midY + 3].toggle();
+
+    mirrorCells[midX - 15][midY + 15].toggle();
+    mirrorCells[midX - 14][midY + 15].toggle();
+    mirrorCells[midX - 15][midY + 16].toggle();
+    mirrorCells[midX - 14][midY + 16].toggle();
+    mirrorCells[midX - 13][midY + 17].toggle();
+    mirrorCells[midX - 12][midY + 17].toggle();
+    mirrorCells[midX - 13][midY + 18].toggle();
+    mirrorCells[midX - 12][midY + 18].toggle();
+
+    mirrorCells[midX - 15][midY - 15].toggle();
+    mirrorCells[midX - 14][midY - 15].toggle();
+    mirrorCells[midX - 15][midY - 14].toggle();
+    mirrorCells[midX - 14][midY - 14].toggle();
+    mirrorCells[midX - 13][midY - 13].toggle();
+    mirrorCells[midX - 12][midY - 13].toggle();
+    mirrorCells[midX - 13][midY - 12].toggle();
+    mirrorCells[midX - 12][midY - 12].toggle();
+
+    mirrorCells[midX + 15][midY + 15].toggle();
+    mirrorCells[midX + 16][midY + 15].toggle();
+    mirrorCells[midX + 15][midY + 16].toggle();
+    mirrorCells[midX + 16][midY + 16].toggle();
+    mirrorCells[midX + 17][midY + 17].toggle();
+    mirrorCells[midX + 18][midY + 17].toggle();
+    mirrorCells[midX + 17][midY + 18].toggle();
+    mirrorCells[midX + 18][midY + 18].toggle();
+
+    mirrorCells[midX + 15][midY - 15].toggle();
+    mirrorCells[midX + 16][midY - 15].toggle();
+    mirrorCells[midX + 15][midY - 14].toggle();
+    mirrorCells[midX + 16][midY - 14].toggle();
+    mirrorCells[midX + 17][midY - 13].toggle();
+    mirrorCells[midX + 18][midY - 13].toggle();
+    mirrorCells[midX + 17][midY - 12].toggle();
+    mirrorCells[midX + 18][midY - 12].toggle();
+    this.draw();
+  };
+
+  sample2 = () => {
+    const rows = this.height / this.cellsize;
+    const cols = this.width / this.cellsize;
+    const midX = Math.floor(rows / 2);
+    const midY = Math.floor(cols / 2);
+    this.clearGrid();
+    const mirrorCells = this.state.cells;
+    mirrorCells[midX][midY].toggle();
+    mirrorCells[midX][midY + 1].toggle();
+    mirrorCells[midX][midY + 2].toggle();
+    mirrorCells[midX - 1][midY + 2].toggle();
+    mirrorCells[midX - 2][midY + 1].toggle();
+
+    mirrorCells[midX - 5][midY - 5].toggle();
+    mirrorCells[midX - 5][midY - 4].toggle();
+    mirrorCells[midX - 5][midY - 3].toggle();
+    mirrorCells[midX - 6][midY - 3].toggle();
+    mirrorCells[midX - 7][midY - 4].toggle();
+
+    mirrorCells[midX - 5][midY].toggle();
+    mirrorCells[midX - 5][midY + 1].toggle();
+    mirrorCells[midX - 5][midY + 2].toggle();
+    mirrorCells[midX - 6][midY + 2].toggle();
+    mirrorCells[midX - 7][midY + 1].toggle();
+
+    mirrorCells[midX][midY - 5].toggle();
+    mirrorCells[midX][midY - 4].toggle();
+    mirrorCells[midX][midY - 3].toggle();
+    mirrorCells[midX - 1][midY - 3].toggle();
+    mirrorCells[midX - 2][midY - 4].toggle();
+    this.draw();
+  };
+
+  sample3 = () => {
+    const rows = this.height / this.cellsize;
+    const cols = this.width / this.cellsize;
+    const midX = Math.floor(rows / 2);
+    const midY = Math.floor(cols / 2);
+    this.clearGrid();
+    const mirrorCells = this.state.cells;
+    mirrorCells[midX][midY].toggle();
+    mirrorCells[midX][midY + 1].toggle();
+    mirrorCells[midX][midY + 2].toggle();
+    mirrorCells[midX][midY + 4].toggle();
+    mirrorCells[midX][midY + 5].toggle();
+    mirrorCells[midX][midY - 1].toggle();
+    mirrorCells[midX][midY - 2].toggle();
+    mirrorCells[midX][midY - 4].toggle();
+    mirrorCells[midX][midY - 5].toggle();
+    mirrorCells[midX + 1][midY + 3].toggle();
+    mirrorCells[midX - 1][midY + 3].toggle();
+    mirrorCells[midX + 1][midY - 3].toggle();
+    mirrorCells[midX - 1][midY - 3].toggle();
+    this.draw();
+  };
+
+  stepBy1Gen = () => {
+    if (this.state.continueAnimation) {
+      return;
+    }
+    this.update();
+    this.draw();
+    this.nextgen();
+  };
 
   clearGrid = () => {
     const canv = this.refs.canvas;
@@ -64,7 +182,7 @@ export default class GameOfLife extends Component {
         cell.living = 0;
       });
     });
-    this.setState({ cells, generation: 0 });
+    this.setState({ cells, generation: 0, continueAnimation: false });
     this.draw();
   };
 
@@ -76,12 +194,12 @@ export default class GameOfLife extends Component {
         cell.living = num;
       });
     });
-    this.setState({ cells, generation: 0 });
+    this.setState({ cells, generation: 0, continueAnimation: false });
     this.draw();
   };
 
   nextgen = () => {
-    this.setState({ generation: this.state.generation + 1 });
+    this.setState(prevState => ({ generation: prevState.generation + 1 }));
   };
 
   draw = () => {
@@ -249,30 +367,80 @@ export default class GameOfLife extends Component {
         <div className="Header">
           <h1>Conways Game of Life</h1>
         </div>
-        <div className Game>
-          <Button variant="light" size="sm" onClick={this.start}>
-            Start
-          </Button>
+        <div className="Game">
+          <div className="btns">
+            <Button
+              variant="light"
+              size="sm"
+              className="mt-1"
+              onClick={this.start}
+            >
+              Start
+            </Button>
 
-          <Button variant="light" size="sm" onClick={this.stop}>
-            Stop
-          </Button>
+            <Button
+              variant="light"
+              size="sm"
+              className="mt-1"
+              onClick={this.stop}
+            >
+              Stop
+            </Button>
 
-          <Button variant="light" size="sm" onClick={this.randomize}>
-            Random
-          </Button>
+            <Button
+              variant="light"
+              size="sm"
+              className="mt-1"
+              onClick={this.clearGrid}
+            >
+              Clear
+            </Button>
 
-          <Button variant="light" size="sm" onClick={this.clearGrid}>
-            Clear
-          </Button>
+            <Button
+              variant="light"
+              size="sm"
+              className="mt-1"
+              onClick={this.randomize}
+            >
+              Random
+            </Button>
 
-          <p>Generations: {this.state.generation}</p>
-          <canvas
-            ref="canvas"
-            width={this.width}
-            height={this.height}
-            onClick={this.clickListener}
-          />
+            <Button
+              variant="light"
+              size="sm"
+              className="mt-1"
+              onClick={this.sample1}
+            >
+              Sample 1
+            </Button>
+
+            <Button
+              variant="light"
+              size="sm"
+              className="mt-1"
+              onClick={this.sample2}
+            >
+              Sample 2
+            </Button>
+
+            <Button
+              variant="light"
+              size="sm"
+              className="mt-1"
+              onClick={this.sample3}
+            >
+              Sample 3
+            </Button>
+          </div>
+          <div className="gens">
+            <p>Generations: {this.state.generation}</p>
+            <canvas
+              ref="canvas"
+              width={this.width}
+              height={this.height}
+              onClick={this.clickListener}
+            />
+          </div>
         </div>
         <footer>
           <CardGroup>
@@ -282,12 +450,10 @@ export default class GameOfLife extends Component {
                   <FaHome />
                 </Card.Title>
 
-                <Card.Text>Navigate back home</Card.Text>
+                <Card.Text></Card.Text>
                 <Card.Link>
                   <Link to="/">
-                    <Button variant="dark" block>
-                      Home
-                    </Button>{" "}
+                    <Button variant="dark">Home</Button>{" "}
                   </Link>
                 </Card.Link>
               </Card.Body>
@@ -299,15 +465,10 @@ export default class GameOfLife extends Component {
                   <FaInfinity />
                 </Card.Title>
 
-                <Card.Text>
-                  Learn how to play the really cool super awesome game by
-                  reading the rules first!
-                </Card.Text>
+                <Card.Text></Card.Text>
                 <Card.Link>
                   <Link to="/rules">
-                    <Button variant="dark" block>
-                      Rules
-                    </Button>{" "}
+                    <Button variant="dark">Rules</Button>{" "}
                   </Link>
                 </Card.Link>
               </Card.Body>
@@ -318,15 +479,10 @@ export default class GameOfLife extends Component {
                 <Card.Title>
                   <FaInfoCircle />
                 </Card.Title>
-                <Card.Text>
-                  Learn all about the history of the really cool super awesome
-                  game by reading the about section!
-                </Card.Text>
+                <Card.Text></Card.Text>
                 <Card.Link>
                   <Link to="/about">
-                    <Button variant="dark" block>
-                      About
-                    </Button>{" "}
+                    <Button variant="dark">About</Button>{" "}
                   </Link>
                 </Card.Link>
               </Card.Body>

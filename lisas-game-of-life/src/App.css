@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   height: 100%;
+  width: 1000px;
 }
 
 .Container {
@@ -62,4 +63,22 @@ svg {
 .Rules {
   width: 60%;
   padding: 20px;
+}
+
+.mt-1 {
+  margin: 5px !important;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+}
+.gens p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.canvas {
+  border: 5px solid yellow;
 }

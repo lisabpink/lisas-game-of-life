@@ -58,8 +58,8 @@ export default function Rules(props) {
               </Card.Title>
 
               <Card.Text>
-                Learn all about the history of the really cool super awesome
-                game by reading the about section!
+                Learn all about the history of Conways Game of Life by reading
+                the about section!
               </Card.Text>
               <Card.Link>
                 <Link to="/about">
@@ -76,7 +76,7 @@ export default function Rules(props) {
               <Card.Title>
                 <FaGamepad />
               </Card.Title>
-              <Card.Text>Play this really cool super awesome game!</Card.Text>
+              <Card.Text>Play the game!</Card.Text>
               <Card.Link>
                 <Link to="/gameoflife">
                   <Button variant="dark" block>
